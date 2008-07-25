@@ -3,7 +3,7 @@
 Summary:        A tool to extract ace archives
 Name:           unace
 Version:        2.50
-Release:        2%{?dist}
+Release:        3%{?dist}
 License:        Redistributable, no modification permitted
 Group:          Applications/Archiving
 URL:            http://www.winace.com/
@@ -43,6 +43,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jul 25 2008 Hans de Goede <j.w.r.degoede@hhs.nl> 2.50-3
+- Release bump for rpmfusion
+
 * Wed Oct 17 2007 Hans de Goede <j.w.r.degoede@hhs.nl> 2.50-2
 - Stop generation of useless debuginfo package (livna 994)
 - Include licence text in documentation

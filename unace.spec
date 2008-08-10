@@ -3,7 +3,7 @@
 Summary:        A tool to extract ace archives
 Name:           unace
 Version:        2.50
-Release:        3%{?dist}
+Release:        4%{?dist}
 License:        Redistributable, no modification permitted
 Group:          Applications/Archiving
 URL:            http://www.winace.com/
@@ -25,6 +25,12 @@ chmod -x licence
 %build
 # nothing to build, upstream distributes prebuild binaries only
 
+# added by knurd on 20080810
+# can likely be removed when RPM Fusion switches to a newer plague
+echo nothing to build, upstream distributes prebuild binaries only
+echo 30 seconds delay needed here to fool RPM Fusion's buildsys
+echo sorry for the trouble, knurd, 20080810
+read -n 1 -s -t 30
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -43,6 +49,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Aug 10 2008 Thorsten Leemhuis <fedora[AT]leemhuis.info> - 2.50-4
+- add a delay during build for now to fool RPM Fusion's buildsys
+
 * Fri Jul 25 2008 Hans de Goede <j.w.r.degoede@hhs.nl> 2.50-3
 - Release bump for rpmfusion
 

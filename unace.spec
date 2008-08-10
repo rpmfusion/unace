@@ -30,7 +30,7 @@ chmod -x licence
 echo nothing to build, upstream distributes prebuild binaries only
 echo 30 seconds delay needed here to fool RPM Fusion\'s buildsys
 echo sorry for the trouble, knurd, 20080810
-read -n 1 -s -t 30 || :
+read -n 1 -s -t 90 || :
 
 %install
 rm -rf $RPM_BUILD_ROOT

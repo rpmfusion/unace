@@ -3,7 +3,7 @@
 Summary:        A tool to extract ace archives
 Name:           unace
 Version:        2.50
-Release:        4%{?dist}
+Release:        5%{?dist}
 License:        Redistributable, no modification permitted
 Group:          Applications/Archiving
 URL:            http://www.winace.com/
@@ -49,6 +49,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 2.50-5
+- rebuild for new F11 features
+
 * Sun Aug 10 2008 Thorsten Leemhuis <fedora[AT]leemhuis.info> - 2.50-4
 - add a delay during build for now to fool RPM Fusion's buildsys
 

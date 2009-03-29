@@ -3,13 +3,17 @@
 Summary:        A tool to extract ace archives
 Name:           unace
 Version:        2.50
-Release:        5%{?dist}
+Release:        6%{?dist}
 License:        Redistributable, no modification permitted
 Group:          Applications/Archiving
 URL:            http://www.winace.com/
 Source0:        http://www.winace.com/files/linunace25.tgz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+%if 0%{?fedora} >= 11
+ExclusiveArch:  i586
+%else
 ExclusiveArch:  i386
+%endif
 
 %description
 unace is a command line utility to extract, view, and test the
@@ -49,6 +53,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Mar 29 2009 Julian Sikorski <belegdol@fedoraproject.org> - 2.50-6
+- Fedora 11 is i586, not i386
+
 * Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 2.50-5
 - rebuild for new F11 features
 

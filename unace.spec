@@ -9,8 +9,8 @@ Group:          Applications/Archiving
 URL:            http://www.winace.com/
 Source0:        http://www.winace.com/files/linunace25.tgz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-%if 0%{?fedora} >= 11
-ExclusiveArch:  i586
+%if 0%{?fedora} >= 11 || 0%{?rhel} >= 6
+ExclusiveArch:  i686
 %else
 ExclusiveArch:  i386
 %endif
@@ -55,6 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Thu Feb 09 2012 Nicolas Chauvet <kwizart@gmail.com> - 2.50-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
+- Fix default arch for the binary package
 
 * Sun Mar 29 2009 Julian Sikorski <belegdol@fedoraproject.org> - 2.50-6
 - Fedora 11 is i586, not i386

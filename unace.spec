@@ -1,19 +1,15 @@
-%define debug_package %{nil}
+%global debug_package %{nil}
+%global __strip /bin/true
 
 Summary:        A tool to extract ace archives
 Name:           unace
 Version:        2.50
-Release:        10%{?dist}
+Release:        11%{?dist}
 License:        Redistributable, no modification permitted
 Group:          Applications/Archiving
 URL:            http://www.winace.com/
 Source0:        http://www.winace.com/files/linunace25.tgz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-%if 0%{?fedora} >= 11 || 0%{?rhel} >= 6
 ExclusiveArch:  i686
-%else
-ExclusiveArch:  i386
-%endif
 
 %description
 unace is a command line utility to extract, view, and test the
@@ -29,30 +25,20 @@ chmod -x licence
 %build
 # nothing to build, upstream distributes prebuild binaries only
 
-# added by knurd on 20080810
-# can likely be removed when RPM Fusion switches to a newer plague
-echo nothing to build, upstream distributes prebuild binaries only
-echo 30 seconds delay needed here to fool RPM Fusion\'s buildsys
-echo sorry for the trouble, knurd, 20080810
-read -n 1 -s -t 90 || :
-
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%{_bindir}/
-install -m 0755 %{name} $RPM_BUILD_ROOT/%{_bindir}/
-
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+mkdir -p %{buildroot}%{_bindir}/
+install -m 0755 %{name} %{buildroot}%{_bindir}/
 
 
 %files
-%defattr(-,root,root,-)
-%doc licence
+%license licence
 %{_bindir}/%{name}
 
 
 %changelog
+* Wed Jul 05 2017 Nicolas Chauvet <kwizart@gmail.com> - 2.50-11
+- Package clean-up
+
 * Sun Mar 26 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 2.50-10
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 

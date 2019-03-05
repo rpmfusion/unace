@@ -4,7 +4,7 @@
 Summary:        A tool to extract ace archives
 Name:           unace
 Version:        2.50
-Release:        15%{?dist}
+Release:        16%{?dist}
 License:        Redistributable, no modification permitted
 Group:          Applications/Archiving
 URL:            http://www.winace.com/
@@ -36,6 +36,9 @@ install -m 0755 %{name} %{buildroot}%{_bindir}/
 
 
 %changelog
+* Tue Mar 05 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 2.50-16
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Sun Aug 19 2018 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 2.50-15
 - Rebuilt for Fedora 29 Mass Rebuild binutils issue
 

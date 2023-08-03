@@ -4,7 +4,7 @@
 Summary:        A tool to extract ace archives
 Name:           unace
 Version:        2.50
-Release:        23%{?dist}
+Release:        24%{?dist}
 License:        Redistributable, no modification permitted
 Group:          Applications/Archiving
 URL:            http://www.winace.com/
@@ -36,6 +36,9 @@ install -m 0755 %{name} %{buildroot}%{_bindir}/
 
 
 %changelog
+* Thu Aug 03 2023 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 2.50-24
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
+
 * Mon Aug 08 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 2.50-23
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
   5.1
